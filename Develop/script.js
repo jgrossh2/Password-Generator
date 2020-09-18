@@ -1,13 +1,9 @@
 // Assignment code here
 var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-var num = ['0','1','2','3','4','5','6','7','8','9']
+var num = ['0','1','2','3','4','5','6','7','8','9'];
 var specialChar = [' ','!','"','#','$','%','&','','(',')','*','+',',','-','.','/',':',';','<','>','=','?','@','[',']','\\','^','`','{','}','|','~','_'];
-var promptCharacter
-var lowerCaseConfirm
-var upperCaseConfirm
-var numberConfirm
-var specialConfirm
+var promptCharacter, lowerCaseConfirm, upperCaseConfirm, numberConfirm, specialConfirm;
 
   //character prompt
 function writePassword () {
@@ -52,31 +48,41 @@ function generatePassword () {
   console.log(numberConfirm);
   console.log(specialConfirm);
 
- for (var i = 0; i < promptCharacter; i++)
-      if (lowerCaseConfirm) {
-          lowerCase[Math.floor(Math.random() * lowerCase.length)];
+var allConfirm = lowerCase.concat(upperCase,num,specialChar);
+for (var i = 0; i < promptCharacter; i++)
+{
+allConfirm[Math.floor(Math.random() * promptCharacter.length)];
+}
+};
 
-      }
-      if (upperCaseConfirm) {
-          upperCase[Math.floor(Math.random() * upperCase.lenth)];
-          // console.log (upperCaseConfirm);
-      }
-      if(specialConfirm) {
-          specialChar[Math.floor(Math.random() * specialChar.lenth)];
-          // console.log (specialCconfirm);
-      }
-     if (numberConfirm) {
-          num[Math.floor(Math.random() * num.length)];
-          // console.log (numberConfirm);
-      };
-    };
+// console.log (generatePassword()); 
+// alert('Your solution is + " " .);
+
+//  for (var i = 0; i < promptCharacter; i++)
+  
+//       if (lowerCaseConfirm) {
+//           lowerCase[Math.floor(Math.random() * lowerCase.length)];
+
+//       }
+//       if (upperCaseConfirm) {
+//           upperCase[Math.floor(Math.random() * upperCase.lenth)];
+          
+//       }
+//       if(specialConfirm) {
+//           specialChar[Math.floor(Math.random() * specialChar.lenth)];
+//       }
+//      if (numberConfirm) {
+//           num[Math.floor(Math.random() * num.length)];
+//           // console.log (numberConfirm);
+//       };
+//     };
   
     
 
 
     
 // // // Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+// var generateBtn = document.querySelector("#generate");
 
 // // // Write password to the #password input
 writePassword() 
@@ -88,4 +94,4 @@ writePassword()
 
 
 // // // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writePassword);
