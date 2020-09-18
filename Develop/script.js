@@ -48,14 +48,14 @@ function generatePassword () {
   console.log(numberConfirm);
   console.log(specialConfirm);
 
-var allConfirm = lowerCase.concat(upperCase,num,specialChar);
-for (var i = 0; i < promptCharacter; i++)
-{
-allConfirm[Math.floor(Math.random() * promptCharacter.length)];
-}
-};
+var all = lowerCase.concat(upperCase,num,specialChar);
+for (var i = 0; i < promptCharacter; i++);
 
-// console.log (generatePassword()); 
+password =all[Math.floor(Math.random() * all.length)];
+
+
+console.log (generatePassword()); 
+};
 // alert('Your solution is + " " .);
 
 //  for (var i = 0; i < promptCharacter; i++)
