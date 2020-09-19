@@ -3,7 +3,11 @@ var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p'
 var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var num = ['0','1','2','3','4','5','6','7','8','9'];
 var specialChar = [' ','!','"','#','$','%','&','','(',')','*','+',',','-','.','/',':',';','<','>','=','?','@','[',']','\\','^','`','{','}','|','~','_'];
-var promptCharacter, lowerCaseConfirm, upperCaseConfirm, numberConfirm, specialConfirm;
+var promptCharacter; 
+var lowerCaseConfirm; 
+var upperCaseConfirm; 
+var numberConfirm;
+var specialConfirm;
 
   //character prompt
 function writePassword () {
@@ -41,20 +45,22 @@ function writePassword () {
        alert('Please choose at least one character type.')
      }
     }
+var password = generatePassword();
 
 function generatePassword () {
-  console.log(lowerCaseConfirm);
-  console. log(upperCaseConfirm);
-  console.log(numberConfirm);
-  console.log(specialConfirm);
+  console.log("lowerCaseConfirm", lowerCaseConfirm);
+  console.log("upperCaseConfirm", upperCaseConfirm);
+  console.log("numberConfirm", numberConfirm);
+  console.log("specialConfirm", specialConfirm);
+  var passwordElements
+  var all = lowerCase.concat(upperCase,num,specialChar);
+  for (var i = 0; i < promptCharacter; i++) {
+    passwordElements = all[Math.floor(Math.random() * all.length)];
+    console.log("passwordElements", passwordElements);
+    return passwordElements;
+  }
 
-var all = lowerCase.concat(upperCase,num,specialChar);
-for (var i = 0; i < promptCharacter; i++);
-
-password =all[Math.floor(Math.random() * all.length)];
-
-
-console.log (generatePassword()); 
+  // console.log (generatePassword()); 
 };
 // alert('Your solution is + " " .);
 
@@ -82,7 +88,7 @@ console.log (generatePassword());
 
     
 // // // Get references to the #generate element
-// var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 
 // // // Write password to the #password input
 writePassword() 
@@ -94,4 +100,4 @@ writePassword()
 
 
 // // // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
