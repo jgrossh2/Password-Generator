@@ -4,10 +4,10 @@ var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P'
 var num = ['0','1','2','3','4','5','6','7','8','9'];
 var specialChar = [' ','!','"','#','$','%','&','','(',')','*','+',',','-','.','/',':',';','<','>','=','?','@','[',']','\\','^','`','{','}','|','~','_'];
 var promptCharacter;
-var lowerCaseConfirm; 
-var upperCaseConfirm; 
-var numberConfirm;
-var specialConfirm;
+var lowerCaseConfirm=false; 
+var upperCaseConfirm=false; 
+var numberConfirm=false;
+var specialConfirm=false;
 
   //character prompt
 function promptInfo() {
@@ -27,7 +27,10 @@ function promptInfo() {
          alert('Please enter a number between 8 and 128.');
          promptInfo()
        }
-    }
+    while (
+      upperCaseConfirm === false && lowerCaseConfirm === false && numberConfirm === false && specialConfirm === false
+    ) {
+      alert('Must choose at least one character type.')
     // uppercase, lowercase, number, or character in password
     upperCaseConfirm = window.confirm('Would you like upper case letters?');
     //  if (upperCaseConfirm) {};
@@ -39,16 +42,17 @@ function promptInfo() {
     //  if (numberConfirm) {};
 
     specialConfirm = window.confirm('Would you like a special character?');
+    }
     //  if (specialConfirm) {};
-
-// var password = generatePassword();
-
+  }
 function generatePassword() {
   promptInfo();
-  if (upperCaseConfirm === false && lowerCaseConfirm === false && numberConfirm === false && specialConfirm === false) {
-    alert('Please choose at least one character type.')
-    return;
-  }
+  console.log(upperCaseConfirm)
+  // if (upperCaseConfirm === false && lowerCaseConfirm === false && numberConfirm === false && specialConfirm === false) {
+  //   console.log("test")
+  //   alert('Please choose at least one character type.')
+  //   return;
+  // }
   console.log("lowerCaseConfirm", lowerCaseConfirm);
   console.log("upperCaseConfirm", upperCaseConfirm);
   console.log("numberConfirm", numberConfirm);
@@ -82,20 +86,15 @@ function generatePassword() {
   // console.log (generatePassword()); 
 };
 
-  
-    
-
-
-    
 // // // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // // // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
 
-  passwordText.value = password;
 }
 // // // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
