@@ -33,32 +33,24 @@ function promptInfo() {
       alert('Must choose at least one character type.')
     // uppercase, lowercase, number, or character in password
     upperCaseConfirm = window.confirm('Would you like upper case letters?');
-    //  if (upperCaseConfirm) {};
 
     lowerCaseConfirm = window.confirm('Would you like lower case letters?');
-    //  if (lowerCaseConfirm) {};
-
+ 
     numberConfirm = window.confirm('Would you like a number?');
-    //  if (numberConfirm) {};
-
+    
     specialConfirm = window.confirm('Would you like a special character?');
     }
-    //  if (specialConfirm) {};
   }
 function generatePassword() {
   promptInfo();
   console.log(upperCaseConfirm)
-  // if (upperCaseConfirm === false && lowerCaseConfirm === false && numberConfirm === false && specialConfirm === false) {
-  //   console.log("test")
-  //   alert('Please choose at least one character type.')
-  //   return;
-  // }
   console.log("lowerCaseConfirm", lowerCaseConfirm);
   console.log("upperCaseConfirm", upperCaseConfirm);
   console.log("numberConfirm", numberConfirm);
   console.log("specialConfirm", specialConfirm);
   var passwordElements= "";
   var all = [];
+  //add characters to empy array if confirmed in prompts
   if (lowerCaseConfirm) {
     passwordElements += lowerCase[Math.floor(Math.random() * lowerCase.length)];
     all= all.concat(lowerCase);
@@ -75,6 +67,7 @@ function generatePassword() {
     passwordElements += specialChar[Math.floor(Math.random() * specialChar.length)];
     all= all.concat(specialChar);
   }
+  //generate password given the amount of characters left to fill
   var finalChar = promptCharacter- passwordElements.length
   console.log(all);
   for (var i = 0; i < finalChar; i++) {
@@ -82,8 +75,6 @@ function generatePassword() {
     console.log("passwordElements", passwordElements);
   } 
     return passwordElements;
-
-  // console.log (generatePassword()); 
 };
 
 // // // Get references to the #generate element

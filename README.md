@@ -12,7 +12,7 @@ This password generator is created in order to create a random password. The use
 
 
 # Links
- https://jgrossh2.github.io/Password-Generator
+ https://jgrossh2.github.io/Password-Generator/
 
 
 # Technologies used
