@@ -5,7 +5,7 @@
 This password generator is created in order to create a random password. The user is asked how many characters wanted for the password between 8-128 characters. Then they are asked if they would like lowercase letters, uppercase letters, numbers, or special characters within their password. There needs to be one of these special categories selected. After that, a random password will be given.
 
 # Images 
-
+![Password Generator with a button to press to begin prompts.](./assets/images/Password-Generator.png) <br>
 
 
 
